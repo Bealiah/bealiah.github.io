@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>前端编码规范</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Bealiah - http://nicolashery.com */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+
+<h6>2017/10/18 10:22:16（此网页借助markdown编辑器书写的，页面书写不能作为参考）</h6>
+<hr />
+<p><strong style="color:#cc0000">注：<br/>
+    • 前端团队开发使用统一的编辑器，如webstorm、subline；<br/>
+    • JS、CSS、HTML等文件统一使用UTF-8编码；<br/>
+    • JS命名，构造函数首字母大写，其他驼峰法，只下划线_；css命名，只横杆-<br/>
+    • 开发每天心中默念："组件化 公用 数据驱动视图"<br/>
+    • 能封装成组件的尽量封装，不要写太多重复代码，并及时分享给其他同事使用；<br/>
+    • 已存在的组件若功能欠缺，不要另起炉灶，协调其他同事完善该组件</strong></p>
+
+
+
+
+<h2>javascript编码规范</h2>
+<p><strong>一. 注释规范</strong></p>
+<ol>
+<li>
+<p>文件注释：文件注释用来说明当前文件所实现内容，主要包括说明部分和作者部分。	</p>
+<ul>
+<li>说明部分：描述文件实现的功能、模块或接口等，如有需要增加使用说明或者范例。</li>
+<li>作者部分：记录文件的开发者名称和联系方式，用以后续的维护或者交流沟通等。</li>
+<li>依赖部分：记录当前文件直接依赖的其他文件，便于工具构建依赖关系。</li>
+</ul>
+<p>注释范例如下图所示：</p>
+<pre><code>/**
+ * fileName:
+ * createdBy:Parox
+ * date:2014/8/2
+ * require:jQuery
+ */
+</code></pre>
+
+</li>
+<li>
+<p>函数或方法注释：</p>
+<pre><code>/**
+ * @author William
+ * @description 在数组中找到指定条件的数组项的索引
+ * @param {Array} targetArr 需要查找的数组，必须
+ * @param {Object}|{string}|{Number}condition 查找需要的条件，如果是字符串数组或数字数组，就是需要查找的字符或数字，
+ *                                                          如果是对象数组，需要给出对象的一个属性,必须
+ * @returns {Number}如果找到了，返回该索引，如果没找到，返回-1
+ */
+function indexOf(targetArr,condition){
+    //code here
+}
+</code></pre>
+
+</li>
+</ol>
+<p><strong>二、命名规范：</strong>类（对象）、函数、对象属性、方法、变量命名必须语义化，应充分表达功能、意义，统一驼峰格式。</p>
+<ol>
+<li>
+<p>对象命名：必须是名词，能够表达对象的意义。如：<strong>calendar</strong>、<strong>dialog</strong>;</p>
+</li>
+<li>
+<p>构造函数命名：必须是名词，首字母大写。如:<strong>Calendar</strong>、<strong>DocumentView</strong></p>
+</li>
+<li>
+<p>函数命名：应充分表达函数的功能。以动词开头。名字长一点没关系。    <br />
+如：getName、setMonth、removeUser、addEmail、show、hide、initialize、filterArrayItemByIndex</p>
+<ul>
+<li>
+<p>特例：事件处理函数以on开头，中间是绑定事件的Dom对象名,事件名结尾。如：</p>
+<pre><code>var onSubmitBtnClick=function(e){
+    //code here
+}
+</code></pre>
+
+</li>
+</ul>
+</li>
+<li>
+<p>方法命名：同函数命名，不同的是，对象的私有方法应以&quot;__&quot;开头，协作者看到以&quot;__&quot;开头的方法，不要去调用。</p>
+<pre><code>var calendar={
+    __init:function(option){
+        //code here
+    }
+}   
+</code></pre>
+
+</li>
+<li>
+<p>对象属性命名:应表达清楚属性的意义。对象的私有属性应以&quot;__&quot;开头，协作者看到以&quot;__&quot;开头的方法，不要直接读写。</p>
+<pre><code>var dialog={
+    __width:800,
+    __height:500
+}
+</code></pre>
+
+</li>
+<li>
+<p>变量命名：名词。对于布尔值类型的变量，以&quot;is&quot;开头。不要定义没有意义的变量名，同时也不要定义一个字母的，除非通过上下文能明确的看出变量的意义。如：</p>
+<pre><code>var name='william';
+var isDisabled=true;
+var date=new Date();
+var m=date.getMonth();
+var y=date.getYear();
+
+//错误做法
+var d,x,m,n='william',b=false;
+</code></pre>
+
+</li>
+<li>
+<p>公共变量(指该变量会被多个方法使用)，以_为前缀,如：</p>
+<pre><code>
+var _isEdit=true,b;
+function removeItem(){
+    b=_isEdit;
+};
+function addItem(){
+    b=_isEdit;
+};</code></pre>
+</li>
+<li>
+<p>常量命名：名词，采用全大写的格式，单词间以&quot;_&quot;分隔,全局的加上G_前缀。如：</p>
+<pre><code>var G_REQUEST_URL='http://www.parox.cn';
+;(function(){
+    //枚举类型
+    var MESSAGE={
+        ERROR:'this is an error',
+        SUCCESS:'oh yes'
+    };
+    var COLOR={
+        RED:'#FF0000',
+        GREEN:'#00FF00'
+    };
+})()
+</code></pre>
+
+</li>
+    <li>
+        <p>jQuery获取的dom元素，以$为前缀，如：</p>
+        <pre><code>var $app_name=$('#app_name')</code></pre>
+    </li>
+</ol>
+<p><strong>三、缩进:</strong>统一缩进一个制表符(Tab)四个空格。</p>
+<p><strong>四、一行字符限制:</strong>一行最多为80个字符，超过80个字符需要在适合的地方换行缩进一个tab。</p>
+<pre><code>    PAROX._$addEvent(this.__accountTabList[i],'mousedown',
+            this.__onMouseDownStopOrRightClick._$bind(this,i));
+</code></pre>
+
+<p><strong>五、条件语句:</strong>条件语句不能省略大括号</p>
+<pre><code>//正确写法
+if(_isOK){
+    this.show();
+} else {
+    this.hide();
+}
+//错语写法
+if(_isOK)this.show();
+else this.hide();
+</code></pre>
+
+<p><strong>六、三元操作符：</strong>三元操作符只能用来给变量赋值，如：</p>
+<pre><code>//正确用法
+var num=num&lt;10?'0'+num:num;
+//错误用法
+isDisplay?this.show():this.hide();
+推荐
+return return x===10?'valid':'invalid';
+不推荐
+if(x===10){
+    return 'valid';
+}else{
+    return 'invalid';
+}
+</code></pre>
+
+<p><strong>七、定义多个变量：</strong>变量的定义必须全放在代码块的头部。对于未初始化的变量或者是常量，可以一次定义多个。对于需要运算赋值的变量，必须一个var关键字定义一个变量（方便调试）。如：</p>
+<pre><code>//正确做法
+function fn(){
+    var name,prop,i=0,j=0;
+    var age=this.getAge()+that.getNum();
+    var fullName=this.getFirstName()+this.getLastName();
+}
+//错误做法
+function fn(){
+    var name,prop,i=0,j=0,age=this.getAge()+that.getNum(),fullName=this.getFirstName()+this.getLastName();
+}
+//错误做法
+function fn(){
+    var name;
+    //code here
+    //code here
+    var isEnabled=true;
+}
+</code></pre>
+
+<p><strong>八、分号：</strong>所有的语句必须以分号结束，不可省略。</p>
+<p><strong>九、for循环：</strong>循环数组时，必须先将数组的长度取出，不能在循环中去取数组长度。如下：</p>
+<pre><code>//正确做法
+var len=array.length,i=0;
+for(;i&lt;len;i++){
+    //code here
+}
+//错误做法
+for(var i=0;i&lt;array.length;i++){
+    //code here
+}
+</code></pre>
+
+
+<p><strong>十、严格模式</strong></p>
+<pre>只在你的脚本中启用严格模式。避免在你的脚本第一行使用它而导致你的所有脚本都启动了严格模式，可能会引发一些第三方类库的问题
+    <code class="language-python hljs"><div class="hljs-line">不推荐
+</div><div class="hljs-line"><span class="hljs-string">'usestrict'</span>;
+</div>(function(){
+</div><div class="hljs-line">    //代码
+</div><div class="hljs-line">}());
+</div><div class="hljs-line">推荐
+</div><div class="hljs-line">(function(){
+</div><div class="hljs-line"><span class="hljs-string">'usestrict'</span>;
+</div><div class="hljs-line">    //代码
+</div><div class="hljs-line">}());
+</div></code>
+</pre>
+
+
+<p><strong>十一、变量声明，所有变量声明都放在函数的头部，所有函数都在使用之前定义</strong></p>
+<pre><code class="language-python hljs"><div class="hljs-line">不推荐
+</div><div class="hljs-line">var a=<span class="hljs-number">10</span>;
+</div><div class="hljs-line">this.showDialog();
+</div><div class="hljs-line">function f(){var d;}
+</div><div class="hljs-line">
+</div><div class="hljs-line">推荐
+</div><div class="hljs-line">var a=<span class="hljs-number">10</span>,
+</div><div class="hljs-line">    d;
+</div><div class="hljs-line">function f(){}
+</div><div class="hljs-line">this.showDialog();
+</div></code></pre>
+
+
+<p><strong>十二、自增和自减运算符</strong></p>
+<pre><code>不要使用自增（++）和自减（–）运算符，用 += 和 -= 代替<br/>++x //等同于 x+=1;</code></pre>
+
+
+<p><strong>十三、相等和严格相等</strong></p>
+<pre>
+尽量使用"严格相等"（===）运算符<br/>
+因为"相等"（==）运算符会自动转换变量类型，造成很多意想不到的情况：<br/>
+<code class="language-python hljs" style="font-weight:bold"><div class="hljs-line"><span class="hljs-number">0</span>==<span class="hljs-string">''</span>//true
+</div><div class="hljs-line"><span class="hljs-number">1</span>==true //true
+</div><div class="hljs-line"><span class="hljs-number">2</span>==true //false
+</div><div class="hljs-line"><span class="hljs-number">0</span>==<span class="hljs-string">'0'</span> //true
+</div><div class="hljs-line">false==<span class="hljs-string">'false'</span> //false
+</div><div class="hljs-line">false==<span class="hljs-string">'0'</span> //true
+</div><div class="hljs-line"><span class="hljs-string">"\t\r\n"</span>==<span class="hljs-number">0</span> //true
+</div></code>
+</pre>
+
+
+<p><strong>十四、语句的合并</strong></p>
+<pre>
+不要将不同目的的语句，合并成一行
+    <code class="language-python hljs"><div class="hljs-line">//例如
+</div><div class="hljs-line"> vara=b=<span class="hljs-number">0</span>;
+</div><div class="hljs-line">//等同于b=<span class="hljs-number">0</span>;var a=b;
+</div><div class="hljs-line">//而不是
+</div><div class="hljs-line">var a=<span class="hljs-number">0</span>,b=<span class="hljs-number">0</span>;
+</div></code>
+</pre>
+
+
+<p><strong>十五、|| 和 && 操作符</strong></p>
+<pre>
+<code class="language-python hljs"><div class="hljs-line">不推荐
+</div><div class="hljs-line">if</span>(y){
+</div><div class="hljs-line">   x=y
+</div><div class="hljs-line">}<span class="hljs-keyword">else</span>{
+</div><div class="hljs-line">   x=<span class="hljs-string">''</span>
+</div><div class="hljs-line">}
+</div><div class="hljs-line">
+</div><div class="hljs-line"><span class="hljs-keyword">if</span>(fn)fn()
+</div><div class="hljs-line">推荐
+</div><div class="hljs-line">x=y||<span class="hljs-string">''</span>;
+</div><div class="hljs-line">fn&amp;&amp;fn()
+</div></code>
+</pre>
+
+
+
+<h2>html编码规范</h2>
+
+<p><strong>一.引入本项目内的文件，使用相对路径，不要指定引入资源所带的具体协议</strong></p>
+<pre><code class="language-python hljs"><div class="hljs-line">不推荐&lt;script src=<span class="hljs-string">"http://cdn.com/foundation.min.js"</span>&gt;&lt;/script&gt;
+</div><div class="hljs-line">推荐 &lt;scriptsrc=<span class="hljs-string">"foundation.min.js"</span>&gt;&lt;/script&gt;
+</div></code></pre>
+
+
+
+<p><strong>二. head规范</strong></p>
+<ol>
+    <li>
+        <p>给网页添加 &lt;!DOCTYPE html&gt;  有些莫名的问题，就是因为缺少了文档类型申明</p>
+    </li>
+    <li>
+        <p>申明语言编码,编码类型若不一致，会引起乱码问题，一般选utf-8</p>
+        <pre><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"/&gt;</code></pre>
+    </li>
+    <li>
+        <p>favicon 图标放在根目录，尺寸16*16即可，</p>
+        <pre><code>&lt;link rel="icon" href="/favicon.ico" type="image/x-icon"/&gt;<br/>&lt;link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/&gt;
+            </code></pre>
+    </li>
+    <li>
+        <p>站点介绍，站点关键词，对于SEO很重要,例如图片网”花瓣网“</p>
+        <pre><code>&lt;meta name="description" content="花瓣网,帮你收集,发现网络上你喜欢的事物.你可以用它收集灵感,保存有用的素材,计划旅行,晒晒自己想要的东西" /&gt;<br />&lt;meta name="keywords" content="家居、旅行、美食、造型/妆发、摄影、服饰/搭配/街拍、童真、婚纱/婚礼、宠物、手工/布艺/玩物、建筑、创意/设计、人物、电影、音乐、图书、美女、数据"/&gt;
+            </code></pre>
+    </li>
+    <li>
+        <p>H5页面窗口自动调整到设备宽度，并禁止用户缩放页面</p>
+        <pre><code>&lt;meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" /&gt; <br/>// width 设置viewport宽度，为一个正整数，或字符串‘device-width’ <br/>// height 设置viewport高度，一般设置了宽度，会自动解析出高度，可以不用设置 <br/>// initial-scale 默认缩放比例，为一个数字，可以带小数 <br/>// minimum-scale 允许用户最小缩放比例，为一个数字，可以带小数 <br/>// maximum-scale 允许用户最大缩放比例，为一个数字，可以带小数 <br/>// user-scalable 是否允许手动缩放</code></pre>
+    </li>
+    <li>
+        <p>*避免IE使用兼容模式</p>
+        <pre><code>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;</code></pre>
+    </li>
+    <li>
+        <p>*最好启用360浏览器的极速模式(webkit)</p>
+        <pre><code>&lt;meta name="renderer" content="webkit" /&gt;</code></pre>
+    </li>
+    <li>
+        <p>*百度禁止转码(百度手机打开网页时，百度可能会对你的网页进行转码，往你页面贴上它的广告)</p>
+        <pre><code>&lt;meta http-equiv="Cache-Control" content="no-siteapp"  /&gt;</code></pre>
+    </li>
+    <li>
+        <p>可选的meta标签属性定义</p>
+        <pre><code class="language-python hljs"><div class="hljs-line">&lt;!-- 可隐藏地址栏，仅针对IOS的Safari（注：IOS7<span class="hljs-number">.0</span>版本以后，safari上已看不到效果）--&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"apple-mobile-web-app-capable"</span> content=<span class="hljs-string">"yes"</span> /&gt;
+</div><div class="hljs-line">&lt;!-- 仅针对IOS的Safari顶端状态条的样式（可选default/black/black-translucent ）--&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"apple-mobile-web-app-status-bar-style"</span> content=<span class="hljs-string">"black"</span> /&gt;
+</div><div class="hljs-line">&lt;!-- IOS中禁用将数字识别为电话号码/忽略Android平台中对邮箱地址的识别 --&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"format-detection"</span>content=<span class="hljs-string">"telephone=no, email=no"</span> /&gt;
+</div><div class="hljs-line">&lt;!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 --&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"HandheldFriendly"</span> content=<span class="hljs-string">"true"</span>&gt;
+</div><div class="hljs-line">&lt;!-- 微软的老式浏览器 --&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"MobileOptimized"</span> content=<span class="hljs-string">"320"</span>&gt;
+</div><div class="hljs-line">&lt;!-- uc强制竖屏 --&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"screen-orientation"</span> content=<span class="hljs-string">"portrait"</span>&gt;
+</div><div class="hljs-line">&lt;!-- QQ强制竖屏 --&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"x5-orientation"</span> content=<span class="hljs-string">"portrait"</span>&gt;
+</div><div class="hljs-line">&lt;!-- UC强制全屏 --&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"full-screen"</span> content=<span class="hljs-string">"yes"</span>&gt;
+</div><div class="hljs-line">&lt;!-- QQ强制全屏 --&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"x5-fullscreen"</span> content=<span class="hljs-string">"true"</span>&gt;
+</div><div class="hljs-line">&lt;!-- UC应用模式 --&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"browsermode"</span> content=<span class="hljs-string">"application"</span>&gt;
+</div><div class="hljs-line">&lt;!-- QQ应用模式 --&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"x5-page-mode"</span> content=<span class="hljs-string">"app"</span>&gt;
+</div><div class="hljs-line">&lt;!-- windows phone 点击无高光 --&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"msapplication-tap-highlight"</span> content=<span class="hljs-string">"no"</span>&gt;
+</div><div class="hljs-line">&lt;!--启用 WebApp 全屏模式（IOS）可隐藏地址栏（从浏览器跳转或输入链接进入并没有此效果）--&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"apple-mobile-web-app-capable"</span> content=<span class="hljs-string">"yes"</span> /&gt;
+</div><div class="hljs-line">&lt;meta name=<span class="hljs-string">"apple-touch-fullscreen"</span> content=<span class="hljs-string">"yes"</span> /&gt;
+</div></code></pre>
+    </li>
+</ol>
+<p><strong>四：标签规范</strong></p>
+<ol>
+    <li>
+        <p>属性值必须带引号，而且是双引号("")，而不是单引号('') ，如：</p><pre> &lt;input type="text" /&gt;</pre>
+    </li>
+    <li>
+        <p>自定义属性，一般以data-开头，若多功能分不清所需属性，可以其他开头</p>
+        <pre>例如：验证valid-type,valid-name,自定义公用的再加一个前缀，如易票通加缩写iv-valid-type,iv-valid-name</pre>
+    </li>
+    <li>
+        <p>html结构适当增加空行和注释，提高可读性</p>
+        <pre><code class="language-python hljs"><div class="hljs-line">&lt;body&gt;
+</div><div class="hljs-line">&lt;header&gt;&lt;/header&gt;
+</div><div class="hljs-line">&lt;main&gt;
+</div><div class="hljs-line">    &lt;!--内容 --&gt;
+</div><div class="hljs-line">    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">content</span>"&gt;
+</span></div><div class="hljs-line">    &lt;/<span class="hljs-title">div</span>&gt;
+</div><div class="hljs-line">    &lt;!--内容 --&gt;
+</div><div class="hljs-line">&lt;/main&gt;
+</div><div class="hljs-line">&lt;footer&gt;&lt;/footer&gt;
+</div><div class="hljs-line">&lt;/body&gt;
+</div></code></pre>
+    </li>
+    <li>
+        <p>关闭所有的标签</p>
+        <pre><code><div class="hljs-line"><span class="hljs-comment line-number">1.</span>如自闭合标签,在结尾叫上 空格和斜干：&lt;img src=<span class="hljs-string">""</span>  /&gt;  &lt;br /&gt; &lt;input type=<span class="hljs-string">""</span> /&gt; &lt;link /&gt;
+</div><div class="hljs-line"><span class="hljs-comment line-number">2.</span>闭合标签,如：&lt;div&gt; &lt;/div&gt;
+</div></code></pre>
+    </li>
+    <li>
+        <p>元素及其属性名称用小写</p>
+        <pre><code class="language-python hljs"><div class="hljs-line"><span class="hljs-comment line-number">1.</span>错误的写法为：&lt;TITLE Data-name=""&gt;代码&lt;/TITLE&gt;</div><div class="hljs-line"><span class="hljs-comment line-number">2.</span>标准的写法为：&lt;title data-name=""&gt;代码&lt;/title&gt;</div></code></pre>
+    </li>
+
+    <li>
+        <p>必写的属性名称,如：</p>
+        <pre><code class="language-python hljs"><div class="hljs-line">&lt;input type=<span class="hljs-string">"text"</span> name=<span class="hljs-string">"userName"</span> /&gt;
+</div><div class="hljs-line">&lt;input type=<span class="hljs-string">"text"</span> name=<span class="hljs-string">"userName"</span> required /&gt;
+</div><div class="hljs-line">&lt;input role=<span class="hljs-string">"alert"</span> aria-hidden=<span class="hljs-string">"false"</span> /&gt;//对于有些网站，需要增加WAI-ARIA无障碍网页应用的属性role、aria-
+</div><div class="hljs-line">&lt;a href=<span class="hljs-string">""</span> title=<span class="hljs-string">""</span>&gt;&lt;/a&gt;
+</div><div class="hljs-line">&lt;textarea name=<span class="hljs-string">"description"</span>&gt;&lt;/textarea&gt;
+</div><div class="hljs-line">&lt;img src=<span class="hljs-string">""</span> alt=<span class="hljs-string">"黄晓丽"</span> /&gt;
+</div><div class="hljs-line">&lt;form name=<span class="hljs-string">"userInfoForm"</span>&gt;&lt;/form&gt;
+</div></code></pre>
+    </li>
+
+    <li>
+        <p>弃用的标签,如：font、big、small、base</p>
+    </li>
+    <li>
+        <p>不在标签上绑定事件，能不写样式就不写,如：&lt;input onClick="" style="color:#666;" /&gt;</p>
+    </li>
+    <li>
+        <p>标签合理嵌套</p>
+        <pre>
+            <code class="language-python hljs"><div class="hljs-line">•越里层，元素也具体
+</div><div class="hljs-line"> 不正确的写法：&lt;div&gt;&lt;h1&gt;诗意代码&lt;/div&gt;&lt;/h1&gt;
+</div><div class="hljs-line"> 正确的写法为：&lt;div&gt;&lt;h1&gt;诗意代码&lt;/h1&gt;&lt;/div&gt;<br />
+</div><div class="hljs-line">•块级元素不能嵌套在行内元素里<br />
+</div><div class="hljs-line">•a标签不能嵌套a标签（链接嵌套）
+</div><div class="hljs-line"> 错误写法：&lt;a href=<span class="hljs-string">"###"</span>&gt;父元素&lt;a href=<span class="hljs-string">"###"</span>&gt;子元素&lt;/a&gt;&lt;/a&gt; ; //嵌套父子级
+</div><div class="hljs-line"> 浏览器解析：&lt;a href=<span class="hljs-string">"###"</span>&gt;父元素&lt;/a&gt;&lt;a href=<span class="hljs-string">"###"</span>&gt;子元素&lt;/a&gt;
+</div></code>
+        </pre>
+    </li>
+    <li>
+        <p>标签语义化，可以提升可读性、可维护性、利于seo，命名如：时间"&lt;timer&gt;2017-09-11&lt;/timer&gt;",地址"&lt;address&gt;北京市晋安区&lt;/address&gt;",编辑框"&lt;editor&gt;内容&lt;/editor&gt;"</p>
+        <pre><code>
+            <div class="hljs-line">•<strong>&lt;title&gt;&lt;/title&gt;：</strong><br/>&nbsp;&nbsp;简短、描述性、唯一（提升搜索引擎排名）,建议将title核心内容放在前<span class="hljs-number">60</span>个字符中。
+        </div><div class="hljs-line">•<strong>&lt;hn&gt;&lt;/hn&gt;：</strong><br/>&nbsp;&nbsp;h1~h6分级标题，用于创建页面信息的层级关系。 对于搜索引擎而言，如果标题与搜索词匹配，这些标题就会被赋予很高的权重，尤其是h1。
+        </div><div class="hljs-line">•<strong>&lt;header&gt;&lt;/header&gt;：</strong><br/>&nbsp;&nbsp;页眉通常包括网站标志、主导航、全站链接以及搜索框。也适合对页面内部一组介绍性或导航性内容进行标记。
+        </div><div class="hljs-line">•<strong>&lt;nav&gt;&lt;/nav&gt;：</strong><br/>&nbsp;&nbsp;标记导航，仅对文档中重要的链接群使用。 html5规范不推荐对辅助性页脚链接使用nav，除非页脚再次显示顶级全局导航、或者包含招聘信息等重要链接。
+        </div><div class="hljs-line">•<strong>&lt;main&gt;&lt;/main&gt;：</strong><br/>&nbsp;&nbsp;页面主要内容，一个页面只能使用一次。如果是web应用，则包围其主要功能。
+        </div><div class="hljs-line">•<strong>&lt;article&gt;&lt;/article&gt;：</strong><br/>&nbsp;&nbsp;包含像报纸一样的内容= =||是这么理解的，表示文档、页面、应用或一个独立的容器。article可以嵌套article，只要里面的article与外面的是部分与整体的关系。
+        </div><div class="hljs-line">•<strong>&lt;section&gt;&lt;/section&gt;：</strong><br/>&nbsp;&nbsp;具有相似主题的一组内容，比如网站的主页可以分成介绍、新闻条目、联系信息等条块。如果只是为了添加样式，请用div！
+        </div><div class="hljs-line">•<strong>&lt;aside&gt;&lt;/aside&gt;：</strong><br/>&nbsp;&nbsp;指定附注栏，包括引述、侧栏、指向文章的一组链接、广告、友情链接、相关产品列表等。如果放在main内，应该与所在内容密切相关。
+        </div><div class="hljs-line">•<strong>&lt;footer&gt;&lt;/footer&gt;：</strong><br/>&nbsp;&nbsp;页脚，只有当父级是body时，才是整个页面的页脚。
+        </div><div class="hljs-line">•<strong>&lt;small&gt;&lt;/small&gt;：</strong><br/>&nbsp;&nbsp;指定细则，输入免责声明、注解、署名、版权。只适用于短语，不要用来标记“使用条款”、“隐私政策”等长的法律声明。
+        </div><div class="hljs-line">•<strong>&lt;strong&gt;&lt;/strong&gt;：</strong><br/>&nbsp;&nbsp;表示内容重要性。
+        </div><div class="hljs-line">•<strong>&lt;em&gt;&lt;/em&gt;：</strong><br/>&nbsp;&nbsp;标记内容着重点（大量用于提升段落文本语义）。
+        </div><div class="hljs-line">•<strong>&lt;mark&gt;&lt;/mark&gt;：</strong><br/>&nbsp;&nbsp;突出显示文本（yellow），提醒读者。在HTML5中em是表示强调的唯一元素，而strong则表示重要程度。
+        </div><div class="hljs-line">•<strong>&lt;b&gt;&lt;/b&gt;：</strong><br/>&nbsp;&nbsp;出于实用目的提醒读者的一块文字，不传达任何额外的重要性
+        </div><div class="hljs-line">•<strong>&lt;i&gt;&lt;/i&gt;：</strong><br/>&nbsp;&nbsp;不同于其他文字的文字,一般可以放文字图标
+        </div><div class="hljs-line">•<strong>&lt;figure&gt;&lt;/figure&gt;：</strong><br/>&nbsp;&nbsp;创建图（默认有<span class="hljs-number">40</span>px左右margin）。
+        </div><div class="hljs-line">•<strong>&lt;figcaption&gt;&lt;/figcaption&gt;：</strong><br/>&nbsp;&nbsp;figure的标题，必须是figure内嵌的第一个或者最后一个元素。
+        </div><div class="hljs-line">•<strong>&lt;cite&gt;&lt;/cite&gt;：</strong><br/>&nbsp;&nbsp;指明引用或者参考，如图书的标题，歌曲、电影、等的名称，演唱会、音乐会、规范、报纸、或法律文件等。只用于参考源本身，而不是从中引述。
+        </div><div class="hljs-line">•<strong>&lt;blockquoto&gt;&lt;/blockquoto&gt;：</strong><br/>&nbsp;&nbsp;引述文本，默认新的一行显示。
+        </div><div class="hljs-line">•<strong>&lt;q&gt;&lt;/q&gt;：</strong><br/>&nbsp;&nbsp;短的引述（跨浏览器问题，尽量避免使用）。 可以对blockquoto和q元素使用cite属性（不是cite元素！），对搜索引擎自动化工具有用。cite=“URL”引述来源地址。
+        </div><div class="hljs-line">•<strong>&lt;code&gt;&lt;/code&gt;：</strong><br/>&nbsp;&nbsp;标记代码。包含示例代码或者文件名
+        </div><div class="hljs-line">•<strong>&lt;pre&gt;&lt;/pre&gt;：</strong><br/>&nbsp;&nbsp;预格式化文本。保留文本固有的换行和空格。
+        </div><div class="hljs-line">•<strong>&lt;meter&gt;&lt;/meter&gt;：</strong><br/>&nbsp;&nbsp;表示分数的值或者已知范围的测量结果。如投票结果。 例如：&lt;meter value=<span class="hljs-string">"0.2"</span> title=”Miles“&gt;<span class="hljs-number">20</span>%completed&lt;/meter&gt;
+        </div><div class="hljs-line">•<strong>&lt;progress&gt;&lt;/progress&gt;：</strong><br/>&nbsp;&nbsp;完成进度
+        </div>
+        </code></pre>
+    </li>
+    <li>
+        <p>样式的问题，不要用增加标签去解决，或者增加空格”& nbsp;“</p>
+        <pre><code>错误写法：&lt;div&gt;下面空一行&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;此行为：&lt;/div&gt;& nbsp;& nbsp;第二行</code></pre>
+    </li>
+    <li>
+        <p>标签层相应缩进,对齐</p>
+        <pre><code><div class="hljs-line">错误写法：&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+</div><div class="hljs-line">正确写法：
+</div><div class="hljs-line">&lt;div&gt;
+</div><div class="hljs-line">    &lt;p&gt;&lt;/p&gt;
+</div><div class="hljs-line">&lt;div&gt;
+</div></code></pre>
+    </li>
+</ol>
+
+<h2>css编码规范</h2>
+<p><strong>一.pc端字体</strong></p>
+<ol>
+    <li>
+        <p><strong>不要使用特殊的字体，一般字体如下：</strong></p>
+        <pre><code>font-family:"helvetica neue",arial,sans-serif</code></pre>
+    </li>
+</ol>
+<p><strong>二.移动端字体</strong></p>
+<ol>
+    <li>
+        <p><strong>font-size:</strong><br/>• 对于只需要适配手机设备，使用px即可<br/>• 对于需要适配各种移动设备，使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备</p>
+        <pre><code>html {font-size:10px}
+            <br/>@media screen and (min-width:480px) and (max-width:639px) { html { font-size: 15px } }
+            <br/>@media screen and (min-width:640px) and (max-width:719px) { html { font-size: 20px } }
+            <br/>@media screen and (min-width:720px) and (max-width:749px) { html { font-size: 22.5px } }
+            <br/>@media screen and (min-width:750px) and (max-width:799px) { html { font-size: 23.5px } }
+            <br/>@media screen and (min-width:800px) and (max-width:959px) { html { font-size: 25px } }
+            <br/>@media screen and (min-width:960px) and (max-width:1079px) { html { font-size: 30px } }
+            <br/>@media screen and (min-width:1080px) { html { font-size: 32px } }</code></pre>
+    </li>
+    <li>
+        <p><strong>font-family:手机端不支持微软雅黑，如无特殊需求，手机端无需定义中文字体，统一使用系统默认英文字体和数字字体可使用 Helvetica</strong></p>
+        <div class="hljs-line">-iOS 系统
+        </div><div class="hljs-line">• 默认中文字体是Heiti SC
+        </div><div class="hljs-line">• 默认英文字体是Helvetica
+        </div><div class="hljs-line">• 默认数字字体是HelveticaNeue
+        </div><div class="hljs-line">• 无微软雅黑字体
+        </div><div class="hljs-line">-Android 系统
+        </div><div class="hljs-line">• 默认中文字体是Droidsansfallback
+        </div><div class="hljs-line">• 默认英文和数字字体是Droid Sans
+        </div><div class="hljs-line">-Winphone 系统
+        </div><div class="hljs-line">• 默认中文字体是Dengxian(方正等线体)
+        </div><div class="hljs-line">• 默认英文和数字字体是Segoe
+        </div>
+    </li>
+
+</ol>
+<p><strong>三.样式不要使用id，因为不通用，且ID选择器权重高于包含1000个class选择器。如：</strong></p>
+<pre><code class="language-python hljs"><div class="hljs-line"><span class="hljs-comment">#content.title{</span>
+</div><div class="hljs-line">    font-size:<span class="hljs-number">2</span>em;
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p><strong>四.选择器中避免标签选择器名，使用准确和有语义的class(类)名</strong></p>
+<pre><code class="language-python hljs">不推荐<div class="hljs-line"><span class="hljs-comment">div.content>header.content-header>h2.title{</span>
+</div><div class="hljs-line">    font-size:<span class="hljs-number">2</span>em;
+</div><div class="hljs-line">}
+</div>推荐<div class="hljs-line"><span class="hljs-comment">.content>.content-header>.title{</span>
+</div><div class="hljs-line">    font-size:<span class="hljs-number">2</span>em;
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p><strong>五.尽可能使用各种缩写属性</strong></p>
+<pre><code class="language-python hljs"><div class="hljs-line">不推荐
+</div><div class="hljs-line">border-top-style:none;
+</div><div class="hljs-line">font-family:palatino,georgia,serif;
+</div><div class="hljs-line">font-size:<span class="hljs-number">100</span>%;
+</div><div class="hljs-line">line-height:<span class="hljs-number">1.6</span>;
+</div><div class="hljs-line">padding-bottom:<span class="hljs-number">2</span>em;
+</div><div class="hljs-line">padding-left:<span class="hljs-number">0</span>px;
+</div><div class="hljs-line">padding-right:<span class="hljs-number">0</span>px;
+</div><div class="hljs-line">padding-top:<span class="hljs-number">0</span>px;
+</div><div class="hljs-line">推荐
+</div><div class="hljs-line">border-top:<span class="hljs-number">0</span>;
+</div><div class="hljs-line">font:<span class="hljs-number">100</span>%/<span class="hljs-number">1.6</span> palatino,georgia,serif;
+</div><div class="hljs-line">padding:<span class="hljs-number">0</span> <span class="hljs-number">1</span>em <span class="hljs-number">2</span>em;
+</div></code></pre>
+
+<p><strong>六.Class类名的分隔符,使用”-“，如：user-icon</strong></p>
+
+
+<p><strong>七.统一格式，每个选择器和属性声明总是使用新的一行,且属性名+空格{+换行+缩进+}，</strong></p>
+<pre><code class="language-python hljs"><div class="hljs-line">p，
+</div><div class="hljs-line">.user-block {
+</div><div class="hljs-line">    font-family:"opensans";//属性选择器或属性值用""
+</div><div class="hljs-line">    background:url(//cdn.com/foundation.png) center no-repeat //url()不要使用引号
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p><strong>八.图标能用web fonts的尽量要求设计师提供svg字体</strong></p>
+<pre></pre>
+
+<p><strong>九.不要随意增加全局样式文件，到处引用，容易造成失控</strong></p>
+<pre></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
